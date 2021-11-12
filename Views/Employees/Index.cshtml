@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Assessment6Mock.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>EmployeeDb</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
+
+<form asp-action="RetirementInfo">
+    
+
+    <div class="form-control">
+        <label>Enter Id:</label>
+        <input type="number" id="id" name="id" />
+        
+    </div>
+    <button type="submit">Enter</button>
+</form>
